@@ -1,0 +1,7 @@
+services:
+  db:
+    image: ghcr.io/danic-git/0401_db:master
+    command: [ "postgres", "-c", "log_statement=all" ]
+    ports:
+      - '5432:5432'
+    restart: unless-stopped
