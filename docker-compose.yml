@@ -1,0 +1,8 @@
+services:
+  db:
+    image: 0401_db
+    build: .
+    command: [ "postgres", "-c", "log_statement=all" ]
+    ports:
+      - '5432:5432'
+    restart: unless-stopped
