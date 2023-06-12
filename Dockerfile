@@ -2,7 +2,7 @@ ARG DBNAME=db
 ARG DBUSER=app
 ARG DBPASS=pass
 
-FROM postgres:latest as init
+FROM postgres:14 as init
 
 ARG DBNAME
 ARG DBUSER
@@ -19,7 +19,7 @@ RUN /usr/local/bin/docker-entrypoint.sh postgres
 
 
 
-FROM postgres:latest as final
+FROM postgres:14 as final
 
 ARG DBNAME
 ARG DBUSER
